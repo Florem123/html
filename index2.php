@@ -9,6 +9,7 @@
     
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="estilos.css">
     
     <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
@@ -16,16 +17,15 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
     <div class="container">
-        <a class="navbar-brand" href="#">Brand</a>
+        <a class="navbar-brand" href="#"><img src="img/logo-transparente.png" height="40"></a>
         <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
             &#9776;
         </button>
         <div class="collapse navbar-collapse" id="exCollapsingNavbar">
             <ul class="nav navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Service</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">More</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">¿Qué son los OVA?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctenos</a></li>
             </ul>
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                 <li class="dropdown order-1">
@@ -34,16 +34,19 @@
                        <li class="px-3 py-2">
                            <form class="form" role="form" id="formLogin" action="" method="post">
                                 <div class="form-group">
-                                    <input name="usuario" placeholder="Usuario" class="form-control form-control-sm" type="text" required="">
+                                    <input name="usuario" id="usuario" placeholder="Usuario" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input name="password" placeholder="Clave" class="form-control form-control-sm" type="text" required="">
+                                    <input name="password" id="password" placeholder="Clave" class="form-control form-control-sm" type="password" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" name="submit" class="btn btn-primary btn-block">Ingresar</button>
                                 </div>
                                 <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                                    <small><a href="registro.php">Registrarse</a></small>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Olvidé mi clave</a></small>
                                 </div>
                             </form>
                         </li>
@@ -58,20 +61,19 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Forgot password</h3>
+                <h3>¿Olvidó su clave?</h3>
                 <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <p>Reset your password..</p>
+                <p>Ingrese su mail para pedir un recupero de clave</p>
             </div>
             <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                <button class="btn btn-primary">Save changes</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                <button class="btn btn-primary">Guardar</button>
             </div>
         </div>
     </div>
 </div>
-
 
 
 
@@ -87,7 +89,7 @@
 
 
             
-    <img src="img/imagenova.gif" class="img-thumbnail" />
+    <img src="img/imagenova.gif" class="img-thumbnail" width="700" height="700" />
             
 
             <hr />
