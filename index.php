@@ -8,19 +8,17 @@ $as = new SimpleSAML_Auth_Simple('default-sp');
 if (isset($_GET['sso'])) {
         $as->requireAuth();
         $attributes = $as->getAttributes();
-	 $_SESSION['AuthNRequestID'] = $attributes;
+     $_SESSION['AuthNRequestID'] = $attributes;
 
-	if (empty($attributes)) {
+    if (empty($attributes)) {
              echo 'No se obtuvieron atributos del usuario';
          } else {
-		$_SESSION["s_usuario"]=$_SESSION['AuthNRequestID']['uid'][0];
-		$_SESSION["s_mail"]=$_SESSION['AuthNRequestID']['mail'][0];
-		$_SESSION["s_tipo"]='I';
-		header("Location: vistas/index.php");
+        $_SESSION["s_usuario"]=$_SESSION['AuthNRequestID']['uid'][0];
+        $_SESSION["s_mail"]=$_SESSION['AuthNRequestID']['mail'][0];
+        $_SESSION["s_tipo"]='I';
+        header("Location: vistas/index.php");
          }
 
-} else {
-    echo '<p><a href="?sso" >Login</a></p>';
 }
 
 //$_SESSION["s_usuario"]=$_SESSION['AuthNRequestID']['uid'][0];
@@ -40,34 +38,78 @@ if (isset($_GET['sso'])) {
     
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="estilos.css">
     
     <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
 </head>
 <body>
-    <div class="header">
-  <img src="img/logo.jpg" />
-  <div class="header-right">
-                        <form id="formLogin" class="form-inline" action="" method="post">
-
-
-                            <div class="form-group mx-sm-3 mb-2">
-                                <label>Usuario</label>
-                                <input type="text" name="usuario" id="usuario" class="form-control form-control-sm font-italic">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="img/logo-transparente.png" height="40"></a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            &#9776;
+        </button>
+        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">¿Qué son los OVA?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctenos</a></li>
+            </ul>
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="dropdown order-1">
+                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Iniciar Sesión <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right mt-2">
+                       <li class="px-3 py-2">
+                           <form class="form" role="form" id="formLogin" action="" method="post">
+                                <div class="form-group">
+                                    <a href="?sso" class="btn btn-dark btn-block"><span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Usuario UNAJ</a>
                                 </div>
-                              <div class="form-group mx-sm-3 mb-2">
-                                Contraseña
-                                <input type="password" name="password" id="password" class="form-control form-control-sm">
+                                <div class="form-group">
+                                    <input name="usuario" id="usuario" placeholder="Usuario" class="form-control form-control-sm" type="text" required="">
                                 </div>
-                            
-                            <div class="form-group mb-2">                              
-                                <input type="submit" name="submit" class="btn btn-primary mb-2" value="Conectar">
-                            </div>  
+                                <div class="form-group">
+                                    <input name="password" id="password" placeholder="Clave" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" name="submit" class="btn btn-primary btn-block">Ingresar</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small><a href="registro.php">Registrarse</a></small>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Olvidé mi clave</a></small>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-                        </form>
-  </div>
+<div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>¿Olvidó su clave?</h3>
+                <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Ingrese su mail para pedir un recupero de clave</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
 </div>
-<br>
+
+
+
+<br><br><br>
  
         <div class="container">    
                             <div class="content">
@@ -79,7 +121,7 @@ if (isset($_GET['sso'])) {
 
 
             
-    <img src="img/imagenova.gif" class="img-thumbnail" />
+    <img src="img/imagenova.gif" class="img-thumbnail" width="700" height="700" />
             
 
             <hr />
