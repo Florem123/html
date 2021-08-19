@@ -63,7 +63,7 @@ if (isset($_GET['sso'])) {
                        <li class="px-3 py-2">
                            <form class="form" role="form" id="formLogin" action="" method="post">
                                 <div class="form-group">
-                                    <a href="?sso" class="btn btn-dark btn-block"><span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Usuario UNAJ</a>
+                                    <a href="?sso" class="btn btn-dark btn-block"><img src="img/logopeque2.png" height="25"> Usuario UNAJ</a>
                                 </div>
                                 <div class="form-group">
                                     <input name="usuario" id="usuario" placeholder="Usuario" class="form-control form-control-sm" type="text" required="">
