@@ -39,11 +39,11 @@ if ($_SESSION["s_usuario"] === null){
 		  <div class="container">
         <div class="content" align="center">
             <h3>Les damos la bienvenida al Banco de Objetos Virtuales de Aprendizaje</h3>
-		<p><?php echo $_SESSION["s_usuario"];
+		<?php /*echo $_SESSION["s_usuario"];
 		echo $_SESSION["s_mail"];
-		echo $_SESSION["s_tipo"]; ?> </p>
+		echo $_SESSION["s_tipo"];*/ ?>
 
- 			<video class="img-thumbnail" src="../img/ova.mp4" autoplay muted loop controls width="750" height="563"></video>
+ 			<video class="img-thumbnail" src="../img/ova.mp4" autoplay muted loop controls width="720" height="540"></video>
  			<br><br>
             
 
