@@ -124,8 +124,8 @@ a .btn-primary.focus {
 }
 a .btn-primary:hover {
   color: #fff;
-  background-color: #00CEE2;
-  border-color: #204d74;
+  background-color: #87CEFA;
+  border-color: black;
 }
 video {
   outline :none;
