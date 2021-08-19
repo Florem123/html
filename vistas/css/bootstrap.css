@@ -3415,6 +3415,17 @@ fieldset[disabled] .btn-warning.active {
   color: #f0ad4e;
   background-color: #fff;
 }
+a.btn-danger {
+  color: white;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 12px;
+  word-break: break-word;
+}
+
 .btn-danger {
   color: #fff;
   background-color: #d9534f;
