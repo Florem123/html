@@ -113,14 +113,14 @@
 
   a .btn-primary {
   color: #fff;
-  background-color: #00ADD5;
-  border-color: #00CEE2;
+  background-color: #3878D3;
+  border-color: black;
 }
 a .btn-primary:focus,
 a .btn-primary.focus {
   color: #fff;
-  background-color: #00CEE2;
-  border-color: #122b40;
+  background-color: #87CEFA;
+  border-color: black;
 }
 a .btn-primary:hover {
   color: #fff;
