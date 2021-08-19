@@ -52,7 +52,7 @@ if ($_SESSION["s_usuario"] === null){
                 
                 
                     <div class="col-sm-4">
-                    <img src="../img/areas.jpg" width="100" height="100" /> <a  href="busquedaareas.php"> <button type="button" class="btn2 btn-primary">Áreas del conocimiento</button></a>
+                    <img src="../img/areas.jpg" width="100" height="100" /> <a  href="busquedaareas2.php"> <button type="button" class="btn2 btn-primary">Áreas del conocimiento</button></a>
                     </div>
                 
                 
