@@ -9,12 +9,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand visible-xs-block visible-sm-block" href=""><img src="../img/unaj_logo.png" /></a>
+				<a class="navbar-brand visible-xs-block visible-sm-block" href=""><img src="../img/logo-transparente.png" /></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 
 				<ul class="nav navbar-nav ">
-					<li class="oculto"><img src="../img/unaj_logo.png" /></a></li>
+					<li class="oculto"><img src="../img/logo-transparente.png" height="40" /></a></li>
 					<li><a  href="../bd/logout.php" role="button">Cerrar Sesión</a></li>
 					
 
