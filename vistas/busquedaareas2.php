@@ -60,7 +60,7 @@ if ($_SESSION["s_usuario"] === null){
 					  <div class="thumbnail">
 					    <div class="card-header" id="headingOne">
 					      <h5 class="mb-0">
-					        <img src="'.$row['miniatura'].'" width="60" height="60"/>   <button class="btn btn-primary" data-toggle="collapse" data-target="#'.$row['id'].'" aria-expanded="true" aria-controls="collapseOne">
+					        <img src="'.$row['miniatura'].'" width="100" height="100"/>   <button class="btn btn-primary" data-toggle="collapse" data-target="#'.$row['id'].'" aria-expanded="true" aria-controls="collapseOne">
 					          '.$row['descripcion'].'
 					        </button>
 					      </h5>
