@@ -83,7 +83,7 @@ include("vistas/conexion.php");
                             VALUES('$nombre','$apellido', '$email', '$usuario', '$d', '$nod', '$institucion', '$coment', '$tipo', '$activo', '$clave')") or die(mysqli_error());
 
                         if($insert){
-                            echo '<br><br><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Su solicitud ha sido procesada correctamente. A la brevedad le enviaremos una respuesta.</div>';
+                            echo '<br><br><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Su solicitud ha sido procesada correctamente. A la brevedad le enviaremos una respuesta.<a href="index.php">Volver</a></div>';
                         }else{
                             echo '<br><br><div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
                         }
