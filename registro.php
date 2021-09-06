@@ -31,47 +31,63 @@
     </div>
 </nav>
 
-<div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>¿Olvidó su clave?</h3>
-                <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <div class="modal-body">
-                <p>Ingrese su mail para pedir un recupero de clave</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                <button class="btn btn-primary">Guardar</button>
-            </div>
-        </div>
+
+
+<div class="container">
+<div class="content">
+            
+            <hr />
+
+<form class="form-horizontal" action="" method="post">
+<br><br><br>
+
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Nombre: </label>
+                    <div class="col-sm-4">
+                        <input type="text" name="nombre" class="form-control"  required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Apellido: </label>
+                    <div class="col-sm-4">
+                        <input type="text" name="apellido" class="form-control"  required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Mail: </label>
+                    <div class="col-sm-4">
+                        <input type="email" name="mail" class="form-control"  required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Puesto: </label>
+                    <div class="col-sm-4">
+                        <input type='checkbox' value='docente' name='docente'>Docente</br>
+                        <input type='checkbox' value='nodocente' name='nodocente'>No docente</br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Apellido: </label>
+                    <div class="col-sm-4">
+                        <input type="text" name="apellido" class="form-control"  required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Comentarios: </label>
+                    <div class="col-sm-4">
+                        <textarea name="coment" class="form-control" maxlength="500"></textarea>
+                    </div>
+                </div>
+
+        </form>
     </div>
 </div>
 
-
-
 <br><br><br>
  
-        <div class="container">    
-                            <div class="content">
-        
-
-    <div class="content" align="center">
-            <h3>Banco de Objetos Virtuales de Aprendizaje</h3>
-
-
-
-            
-    <img src="img/imagenova.gif" class="img-thumbnail" width="700" height="700" />
-            
-
-            <hr />
-            
-
-        </div>
-    </div>
-    </div>
     <center>
     <p>&copy; Banco de Objetos Virtuales de Aprendizaje-UNAJ <?php echo date("Y");?></p>
         </center>
