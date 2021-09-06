@@ -6,10 +6,10 @@ session_start();
 if ($_SESSION["s_usuario"] === null){
     header("Location: ../index.php");
 }
-if((time() - $_SESSION['s_time']) > 60){
+if((time() - $_SESSION['s_time']) > 7200){
 	header('location: ../bd/logout.php');
 }
-var_dump($_SESSION["s_time"]);
+//var_dump($_SESSION["s_time"]);
 
 ?>
 <!DOCTYPE html>
@@ -42,8 +42,8 @@ var_dump($_SESSION["s_time"]);
 		  <div class="container">
         <div class="content" align="center">
             <h3>Les damos la bienvenida al Banco de Objetos Virtuales de Aprendizaje</h3>
-		<?php echo $_SESSION["s_time"];
-		/*echo $_SESSION["s_mail"];
+		<?php /*echo $_SESSION["s_time"];
+		echo $_SESSION["s_mail"];
 		echo $_SESSION["s_tipo"];*/ ?>
 
  			<video class="img-thumbnail" src="../img/ova.mp4" autoplay muted loop controls width="720" height="540"></video>
