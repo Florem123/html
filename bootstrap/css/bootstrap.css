@@ -224,7 +224,11 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  max-width: 100%;
+  font-weight: bold;
 }
+  
+
 
 button {
   border-radius: 0;
