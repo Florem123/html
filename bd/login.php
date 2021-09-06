@@ -21,6 +21,7 @@ if($resultado->rowCount() >= 1){
     $_SESSION["s_tipo"] = 'E';    
     $_SESSION["s_idRol"] = $data[0]["idRol"];
     $_SESSION["s_rol_descripcion"] = $data[0]["rol"];
+    $_SESSION['s_time'] = time();
 }else{
     $_SESSION["s_usuario"] = null;  
     $data=null;
