@@ -16,6 +16,7 @@ if (isset($_GET['sso'])) {
         $_SESSION["s_usuario"]=$_SESSION['AuthNRequestID']['uid'][0];
         $_SESSION["s_mail"]=$_SESSION['AuthNRequestID']['mail'][0];
         $_SESSION["s_tipo"]='I';
+        $_SESSION['s_time'] = time();
         header("Location: vistas/index.php");
          }
 
