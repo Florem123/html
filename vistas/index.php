@@ -40,8 +40,8 @@ var_dump($_SESSION["s_time"]);
 		  <div class="container">
         <div class="content" align="center">
             <h3>Les damos la bienvenida al Banco de Objetos Virtuales de Aprendizaje</h3>
-		<?php /*echo $_SESSION["s_usuario"];
-		echo $_SESSION["s_mail"];
+		<?php echo $_SESSION["s_time"];
+		/*echo $_SESSION["s_mail"];
 		echo $_SESSION["s_tipo"];*/ ?>
 
  			<video class="img-thumbnail" src="../img/ova.mp4" autoplay muted loop controls width="720" height="540"></video>
