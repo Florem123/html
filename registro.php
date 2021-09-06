@@ -1,3 +1,8 @@
+<?php
+include("vistas/conexion.php");
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,6 +18,7 @@
     <link rel="stylesheet" href="estilos.css">
     
     <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
+    
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
@@ -37,6 +43,58 @@
 <div class="content">
             
             <hr />
+
+            <?php
+            if(isset($_POST['add'])){
+
+                $nombre= mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
+                $apellido= mysqli_real_escape_string($con,(strip_tags($_POST["apellido"],ENT_QUOTES)));
+                $email= mysqli_real_escape_string($con,(strip_tags($_POST["mail"],ENT_QUOTES))); 
+                $institucion= mysqli_real_escape_string($con,(strip_tags($_POST["institucion"],ENT_QUOTES)));
+
+                $coment= mysqli_real_escape_string($con,(strip_tags($_POST["coment"],ENT_QUOTES)));
+
+                if (isset($_POST["docente"])){
+                    $d=1;
+                } else{
+                    $d=0;
+                }
+
+                if (isset($_POST["nodocente"])){
+                    $nod=1;
+                } else{
+                    $nod=0;
+                }
+
+                $us = explode("@", $email);
+                $usuario=$us[0];
+
+                $tipo='E';
+                $activo=0;
+
+                $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $clave=substr(str_shuffle($permitted_chars), 0, 10);
+
+                $cek = mysqli_query($con, "SELECT * FROM user WHERE mail='$email'");
+                if(mysqli_num_rows($cek) == 0){
+
+
+                        $insert = mysqli_query($con, "INSERT INTO user(nombre, apellido, mail, usuario, docente, nodoc, institucion, coment, tipo, activo, clave) 
+                            VALUES('$nombre','$apellido', '$email', '$usuario', '$d', '$nod', '$institucion', '$coment', '$tipo', '$activo', '$clave')") or die(mysqli_error());
+
+                        if($insert){
+                            echo '<br><br><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Su solicitud ha sido procesada correctamente. A la brevedad le enviaremos una respuesta.</div>';
+                        }else{
+                            echo '<br><br><div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
+                        }
+                     
+                }else{
+                    echo '<br><br><div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>El usuario que intenta registrar está en proceso de revisión</div>';
+                }
+            }
+
+            
+            ?>
 
 <form class="form-horizontal" action="" method="post">
 <br><br><br>
@@ -69,9 +127,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Apellido: </label>
+                    <label class="col-sm-3 control-label">Institución donde se desempeña: </label>
                     <div class="col-sm-4">
-                        <input type="text" name="apellido" class="form-control"  required>
+                        <input type="text" name="institucion" class="form-control">
                     </div>
                 </div>
 
@@ -79,6 +137,14 @@
                     <label class="col-sm-3 control-label">Comentarios: </label>
                     <div class="col-sm-4">
                         <textarea name="coment" class="form-control" maxlength="500"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">&nbsp;</label>
+                    <div class="col-sm-6">
+                        <input type="submit" name="add" class="btn btn-sm btn-primary" value="Enviar">
+                        <a href="index.php" class="btn btn-sm btn-danger">Cancelar</a>
                     </div>
                 </div>
 
@@ -97,8 +163,9 @@
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    
+    <script src="vistas/js/funcion.js"></script>
     <script src="plugins/sweet_alert2/sweetalert2.all.min.js"></script>
-    <script src="codigo.js"></script>
+    
+   
 </body>
 </html>
