@@ -6,7 +6,7 @@ session_start();
 if ($_SESSION["s_usuario"] === null){
     header("Location: ../index.php");
 }
-if((time() - $_SESSION['s_time']) > 7200){
+if((time() - $_SESSION['s_time']) > 60){
 	header('location: ../bd/logout.php');
 }
 //var_dump($_SESSION["s_time"]);
