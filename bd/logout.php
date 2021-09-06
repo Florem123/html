@@ -12,6 +12,7 @@ if ($_SESSION["s_tipo"]== 'I'){
 	unset($_SESSION["s_usuario"]);
         unset($_SESSION["s_tipo"]);
         unset($_SESSION["s_mail"]);
+	unset($_SESSION["s_time"]);
 	session_destroy();
 	header("Location: ../index.php");
 } elseif ($_SESSION["s_tipo"] == 'E'){
@@ -19,6 +20,7 @@ if ($_SESSION["s_tipo"]== 'I'){
         unset($_SESSION["s_tipo"]);
         unset($_SESSION["s_idRol"]);
         unset($_SESSION["s_rol_descripcion"]);
+	unset($_SESSION["s_time"]);
         session_destroy();
         header("Location: ../index.php");
 }
