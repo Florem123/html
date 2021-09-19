@@ -1,6 +1,13 @@
 <?php
 include("vistas/conexion.php");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use visPHPMailer\PHPMailer\Exception;
+
+require 'vistas/mail/Exception.php';
+require 'vistas/mail/PHPMailer.php';
+require 'vistas/mail/SMTP.php';
+
 ?>
 
 <!doctype html>
@@ -84,6 +91,34 @@ include("vistas/conexion.php");
 
                         if($insert){
                             echo '<br><br><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Su solicitud ha sido procesada correctamente. A la brevedad le enviaremos una respuesta.<a href="index.php">Volver</a></div>';
+                            $mail = new PHPMailer(true);
+
+                            try {
+                                //Server settings
+                                //$mail->SMTPDebug = 2;                      //Enable verbose debug output
+                                $mail->isSMTP();                                            //Send using SMTP
+                                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                                $mail->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
+                                $mail->Password   = 'Mailerunaj21';                               //SMTP password
+                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                                $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+                                //Recipients
+                                $mail->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
+                                $mail->addAddress('florem.ayala.123@gmail.com');     //Add a recipient
+
+                                //Content
+                                $mail->isHTML(true);                                  //Set email format to HTML
+                                $mail->Subject = 'REGISTRO de '.$nombre.' '.$apellido;
+                                $mail->Body    = 'Este mensje lo envía '.$nombre.' '.$apellido.'. \n Desea registrarse como usuario externo en el banco de OVA. \n Su correo es: '.$email.'. \n Envia la siguiente informacion \n Es docente: '.$d. '\n Es no docente: '.$nod.' \n Trabaja en: '.$institucion.' \n Comentario: '.$coment;
+
+                                $mail->send();
+                                echo 'El mensaje se ha enviado correctamente';
+                            } catch (Exception $e) {
+                                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                            }
+
                         }else{
                             echo '<br><br><div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
                         }
