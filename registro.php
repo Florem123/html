@@ -112,7 +112,7 @@ require 'vistas/mail/SMTP.php';
                                 //Content
                                 $mail->isHTML(true);                                  //Set email format to HTML
                                 $mail->Subject = 'REGISTRO de '.$nombre.' '.$apellido;
-                                $mail->Body    = 'Este mensje lo envía '.$nombre.' '.$apellido.'. \n Desea registrarse como usuario externo en el banco de OVA. \n Su correo es: '.$email.'. \n Envia la siguiente informacion \n Es docente: '.$d. '\n Es no docente: '.$nod.' \n Trabaja en: '.$institucion.' \n Comentario: '.$coment;
+                                $mail->Body = 'Este mensje lo envía '.$nombre.' '.$apellido.'.<br>Desea registrarse como usuario externo en el banco de OVA.<br>Su correo es: '.$email.'.<br>Envia la siguiente informacion:<br>Es docente: '.$d. '<br>Es no docente: '.$nod.'<br>Trabaja en: '.$institucion.'<br>Comentario: '.$coment;
 
                                 $mail->send();
                                 //MAIL AL USUARIO QUE SE REGISTRA
