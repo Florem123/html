@@ -92,6 +92,7 @@ require 'vistas/mail/SMTP.php';
                         if($insert){
                             echo '<br><br><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Su solicitud ha sido procesada correctamente. A la brevedad le enviaremos una respuesta.<a href="index.php">Volver</a></div>';
                             $mail = new PHPMailer(true);
+                            $mail2 = new PHPMailer(true);
 
                             try {
                                 //Server settings
@@ -114,7 +115,25 @@ require 'vistas/mail/SMTP.php';
                                 $mail->Body    = 'Este mensje lo envía '.$nombre.' '.$apellido.'. \n Desea registrarse como usuario externo en el banco de OVA. \n Su correo es: '.$email.'. \n Envia la siguiente informacion \n Es docente: '.$d. '\n Es no docente: '.$nod.' \n Trabaja en: '.$institucion.' \n Comentario: '.$coment;
 
                                 $mail->send();
-                                echo 'El mensaje se ha enviado correctamente';
+                                //MAIL AL USUARIO QUE SE REGISTRA
+                                $mail2->isSMTP();                                            //Send using SMTP
+                                $mail2->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                                $mail2->SMTPAuth   = true;                                   //Enable SMTP authentication
+                                $mail2->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
+                                $mail2->Password   = 'Mailerunaj21';                               //SMTP password
+                                $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                                $mail2->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+                                //Recipients
+                                $mail2->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
+                                $mail2->addAddress($email);     //Add a recipient
+
+                                //Content
+                                $mail2->isHTML(true);                                  //Set email format to HTML
+                                $mail2->Subject = 'REGISTRO BANCO DE OVA UNAJ - no responder';
+                                $mail2->Body    = 'BIENVENIDO '.$nombre.' '.$apellido.'. GRACIAS POR REGISTRARSE AL BANCO DE OVA UNAJ, A LA BREVEDAD RECIBIRA UNA RESPUESTA';
+
+                                $mail2->send();
                             } catch (Exception $e) {
                                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                             }
