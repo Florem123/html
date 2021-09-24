@@ -49,17 +49,17 @@ if((time() - $_SESSION['s_time']) > 7200){
 
                 <div class="form-group">
                     <div class="col-sm-4">
-                        <img src="../img/recursos.png" width="100" height="100"/> <a  href="busquedarecu.php"> <button type="button" class="btn2 btn-primary">Tipo de recurso</button> </a>
+                        <img src="https://drive.google.com/uc?export=download&id=1mjesEwC0tqDBnpHAX9tzoSe97q9DTMxo" width="100" height="100"/> <a  href="busquedarecu.php"> <button type="button" class="btn2 btn-primary">Tipo de recurso</button> </a>
                     </div>
                 
                 
                     <div class="col-sm-4">
-                    <img src="../img/areas.jpg" width="100" height="100" /> <a  href="busquedaareas2.php"> <button type="button" class="btn2 btn-primary">Áreas del conocimiento</button></a>
+                    <img src="https://drive.google.com/uc?export=download&id=1282ri4d4J2q_lZcyLx2pYSoLH8K18dnP" width="100" height="100" /> <a  href="busquedaareas2.php"> <button type="button" class="btn2 btn-primary">Áreas de conocimiento</button></a>
                     </div>
                 
                 
                     <div class="col-sm-4">
-                        <img src="../img/palclaves.png" width="100" height="100" /> <a  href="busquedapal.php"> <button type="button" class="btn2 btn-primary">Palabras claves</button></a>
+                        <img src="https://drive.google.com/uc?export=download&id=1xSThDplIMA92FzhTpT5MmMcpDdvZpb5f" width="100" height="100" /> <a  href="busquedapal.php"> <button type="button" class="btn2 btn-primary">Palabras claves</button></a>
                     </div>
                 </div>
            </div>
