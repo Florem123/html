@@ -49,12 +49,12 @@ if((time() - $_SESSION['s_time']) > 7200){
 
                 <div class="form-group" align="center">
                     <div class="col-sm-4">
-                        <img src="../img/areas.jpg" width="100" height="100"/> <a  href="modyrepre.php"> <button type="button" class="btn2 btn-success">Sobre las representaciones</button> </a>
+                        <img src="https://drive.google.com/uc?export=download&id=1rKyTkJHcj9liMGJLYZLL1zvQRLi5Zrpy" width="100" height="100"/> <a  href="modyrepre.php"> <button type="button" class="btn2 btn-success">Sobre las representaciones</button> </a>
                     </div>
                 
                 
                     <div class="col-sm-4">
-                    <img src="../img/areas.jpg" width="100" height="100" /> <a  href="biblio.php"> <button type="button" class="btn2 btn-success">Bibliografía</button></a>
+                    <img src="https://drive.google.com/uc?export=download&id=1gkpbehjeeEbC3l6rmDyEDuc5N2u2vBKG" width="100" height="100" /> <a  href="biblio.php"> <button type="button" class="btn2 btn-success">Bibliografía</button></a>
                     </div>
                 
                 </div>
