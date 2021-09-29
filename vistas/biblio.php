@@ -10,7 +10,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 	header('location: ../bd/logout.php');
 }
 
-$sql = mysqli_query($con, "SELECT * FROM objeto_ova WHERE id=1");
+$sql = mysqli_query($con, "SELECT * FROM biblio WHERE id=1");
 if(mysqli_num_rows($sql) == 0){
 	header("Location: index.php");
 }else{
