@@ -51,7 +51,7 @@ if(mysqli_num_rows($sql) == 0){
 				while($row = mysqli_fetch_assoc($sql)){
 					echo '
 					<p class="titulo">'.$row['titulo'].'</p>
-					<p>'.$row['descripcion'].'</p>'; 
+					<pre>'.$row['descripcion'].'</pre>'; 
 					}
 			}?>
 			<hr />
