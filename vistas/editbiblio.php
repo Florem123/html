@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 session_start();
-			$nik = 2;
+			$nik = 3;
 			$sql = mysqli_query($con, "SELECT * FROM biblio WHERE id='$nik'");
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
