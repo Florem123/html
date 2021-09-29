@@ -41,7 +41,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 	<div class="container">
 		<div class="content">
 			
-			<p class="titulo2">Bibliográfía</p></br>
+			<p class="titulo2">Bibliografía</p></br>
 
 
 			<hr />
