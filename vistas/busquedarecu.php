@@ -18,7 +18,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Banco OVAs UNAJ</title>
+	<title>Banco OVA UNAJ</title>
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 	<div class="container">
 		<div class="content">
 
-				<h4>Búsqueda por tipo de recursos</h4>
+				<h4>Búsqueda por tipos de recurso</h4>
 
 <hr />
 		<div class="grid-1">
