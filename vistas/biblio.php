@@ -42,6 +42,23 @@ if((time() - $_SESSION['s_time']) > 7200){
 		<div class="content">
 			
 			<p class="titulo2">Bibliografía</p></br>
+			
+		<?php
+			
+			$sql = mysqli_query($con, "SELECT * FROM objeto_ova WHERE id=1");
+			if(mysqli_num_rows($sql) == 0){
+				header("Location: index.php");
+			}else{
+				$row = mysqli_fetch_assoc($sql);
+			}
+		
+
+			?>
+			
+			<p class="titulo2">Bibliográfía</p></br>
+
+			<pre><?php echo $row ['descripcion']; ?></pre>
+			<hr />
 
 
 			<hr />
