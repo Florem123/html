@@ -43,7 +43,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 
 
 
-			<h4>Búsqueda por áreas generales del conocimiento</h4>
+			<h4>Búsqueda por áreas de conocimiento</h4>
 
 			<hr />
 
