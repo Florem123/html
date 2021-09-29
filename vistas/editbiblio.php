@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 session_start();
-			$nik = 1;
+			$nik = 2;
 			$sql = mysqli_query($con, "SELECT * FROM biblio WHERE id='$nik'");
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
@@ -11,8 +11,8 @@ session_start();
 			if(isset($_POST['save'])){
 
 				$descripcion= mysqli_real_escape_string($con,(strip_tags($_POST["descripcion"],ENT_QUOTES)));
-				
-				$update = mysqli_query($con, "UPDATE biblio SET descripcion='$descripcion' WHERE id='$nik'") or die(mysqli_error());
+				$titulo= mysqli_real_escape_string($con,(strip_tags($_POST["titulo"],ENT_QUOTES)));
+				$update = mysqli_query($con, "UPDATE biblio SET titulo='$titulo',descripcion='$descripcion' WHERE id='$nik'") or die(mysqli_error());
 				if($update){
 					header("Location: index.php");
 				}else{
@@ -48,7 +48,12 @@ session_start();
 			
 			
 			<form class="form-horizontal" action="" method="post">
-
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Titulo: </label>
+					<div class="col-sm-4">
+						<textarea name="titulo" class="form-control"><?php echo $row ['titulo']; ?></textarea>
+					</div>
+				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Descripción: </label>
 					<div class="col-sm-4">
