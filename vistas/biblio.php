@@ -10,11 +10,9 @@ if((time() - $_SESSION['s_time']) > 7200){
 	header('location: ../bd/logout.php');
 }
 
-$sql = mysqli_query($con, "SELECT * FROM biblio WHERE id=1");
+$sql = mysqli_query($con, "SELECT * FROM biblio");
 if(mysqli_num_rows($sql) == 0){
 	header("Location: index.php");
-}else{
-	$row = mysqli_fetch_assoc($sql);
 }
 ?>
 <!DOCTYPE html>
@@ -48,11 +46,14 @@ if(mysqli_num_rows($sql) == 0){
 		<div class="content">
 			
 			<p class="titulo2">Bibliografía</p></br>
-
-			<pre><?php echo $row ['descripcion']; ?></pre>
-			<hr />
-
-
+			<?php
+			if(mysqli_num_rows($sql) != 0){
+				while($row = mysqli_fetch_assoc($sql)){
+					echo '
+					<p class='titulo'>'.$row['titulo'].'</p>
+					<pre>'.$row['descripcion'].'</pre>'; 
+					}
+			}?>
 			<hr />
 
 		</div>
