@@ -21,18 +21,18 @@ if(isset($_POST['submit'])){
      if( $row['clave'] == $passvieja && $password==$password2 ){
 				$primeracceso=1;
         $p= md5($password);
-				$u = mysqli_query($con, "UPDATE user SET clave='$p',primeracceso='$primeracceso' WHERE id='$nik'") or die(mysqli_error());
+	$u = mysqli_query($con, "UPDATE user SET clave='$p',primeracceso='$primeracceso' WHERE id='$nik'") or die(mysqli_error());
         echo'<script type="text/javascript">
         alert("Clave cambiada con éxito");
         window.location.href="index.php";
         </script>';
        }else{
-						echo'<script type="text/javascript">
+		echo'<script type="text/javascript">
             alert("Revise los campos ingresados");
             </script>';
 			}
   }else{
-						echo'<script type="text/javascript">
+		echo'<script type="text/javascript">
             alert("Usted ya ha cambiado su clave inicial");
             window.location.href="index.php";
             </script>';
