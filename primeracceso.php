@@ -78,14 +78,14 @@ if(isset($_POST['submit'])){
 	<div class="container">
 		<div class="content">
 					
-    <div id="login">
+    <div id="cambiopass">
+	    <br><br>
         <h4 class="text-center text-white display-5">Bienvenida/o <?php echo $row['nombre']." ".$row['apellido']; ?> </h4>
            <div class="container">                        
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12  bg-light text-dark">
                         <form id="formPass" class="form" action="" method="post">
-                            <h3 class="text-center text-dark">Iniciar Sesión</h3>
                             <div class="form-group">
                                 <label for="passvieja" class="text-dark">Contraseña actual</label><br>
                                 <input type="password" name="passvieja" id="passvieja" class="form-control">
