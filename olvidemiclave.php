@@ -1,6 +1,12 @@
 <?php
 include("vistas/conexion.php");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use visPHPMailer\PHPMailer\Exception;
+
+require 'vistas/mail/Exception.php';
+require 'vistas/mail/PHPMailer.php';
+require 'vistas/mail/SMTP.php';
 
 if(isset($_POST['submit'])){
   $email= mysqli_real_escape_string($con,(strip_tags($_POST["email"],ENT_QUOTES)));
