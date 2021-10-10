@@ -22,6 +22,8 @@ require 'vistas/mail/SMTP.php';
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="vistas/css/style_nav.css">
+
     
     <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
     
