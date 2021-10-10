@@ -81,7 +81,7 @@ require 'vistas/mail/SMTP.php';
                 $usuario=$us[0];
                 $cek1 = mysqli_query($con, "SELECT * FROM user WHERE usuario='$usuario'");
                 if(mysqli_num_rows($cek1) != 0){
-                    $u = sizeof(mysqli_fetch_assoc($cek1));
+                    $u = mysqli_num_rows($cek1);
                     $usuario=$usuario.$u;                    
                  }
 
