@@ -21,7 +21,7 @@ if(mysqli_num_rows($sql) == 0){
 
 
 
-	if(isset($_POST['add'])){
+	if(isset($_POST['add']) && $row['activo']==0){
 
 				$activo=1;
 				$email= $row['mail'];
@@ -60,7 +60,9 @@ if(mysqli_num_rows($sql) == 0){
         }
         
         header("Location: index.php");
-     }
+    }else{
+	 echo '<br><br><div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Este usuario ya fue aceptado! <a href="index.php">Volver</a></div>';
+	} 
 
 ?>
 <!DOCTYPE html>
