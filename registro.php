@@ -88,12 +88,14 @@ require 'vistas/mail/SMTP.php';
 
                         $insert = mysqli_query($con, "INSERT INTO user(nombre, apellido, mail, usuario, docente, nodoc, institucion, coment, tipo, activo, clave) 
                             VALUES('$nombre','$apellido', '$email', '$usuario', '$d', '$nod', '$institucion', '$coment', '$tipo', '$activo', '$clave')") or die(mysqli_error());
-
+                        
+                        $id_user= mysqli_insert_id($con);
+                    
                         if($insert){
                             echo '<br><br><div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Su solicitud ha sido procesada correctamente. A la brevedad le enviaremos una respuesta.<a href="index.php">Volver</a></div>';
                             $mail = new PHPMailer(true);
                             $mail2 = new PHPMailer(true);
-
+                            $link ='https://ova.informatica.unaj.edu.ar/gestionreg.php?nik='.$id_user;
                             try {
                                 //Server settings
                                 //$mail->SMTPDebug = 2;                      //Enable verbose debug output
