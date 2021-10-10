@@ -98,34 +98,35 @@ require 'vistas/mail/SMTP.php';
                                 //Server settings
                                 //$mail->SMTPDebug = 2;                      //Enable verbose debug output
                                 $mail->isSMTP();                                            //Send using SMTP
-                                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                                $mail->Host       = 'mail.unaj.edu.ar';                    //Set the SMTP server to send through
                                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                                $mail->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
-                                $mail->Password   = 'Mailerunaj21';                               //SMTP password
+                                $mail->Username   = 'noresponder@unaj.edu.ar';                     //SMTP username
+                                $mail->Password   = 'qwew1232';                               //SMTP password
                                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                                 $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
                                 //Recipients
-                                $mail->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
+                                $mail->setFrom('noresponder@unaj.edu.ar', 'OvaUnaj');
                                 $mail->addAddress('florem.ayala.123@gmail.com');     //Add a recipient
 
                                 //Content
                                 $mail->isHTML(true);                                  //Set email format to HTML
                                 $mail->Subject = 'REGISTRO de '.$nombre.' '.$apellido;
-                                $mail->Body = 'Este mensje lo envía '.$nombre.' '.$apellido.'.<br>Desea registrarse como usuario externo en el banco de OVA.<br>Su correo es: '.$email.'.<br>Envia la siguiente informacion:<br>Es docente: '.$d. '<br>Es no docente: '.$nod.'<br>Trabaja en: '.$institucion.'<br>Comentario: '.$coment;
+                                $mail->Body    = 'Este mensje lo envía '.$nombre.' '.$apellido.'.<br>Desea registrarse como usuario externo en el banco de OVA.<br>Su correo es: '.$email.'.<br>Envia la siguiente informacion:<br>Es docente: '.$d. '<br>Es no docente: '.$nod.'<br>Trabaja en: '.$institucion.'<br>Comentario: '.$coment.'<br>Para resolver el registro ingrese: '.$link;
 
                                 $mail->send();
+                                
                                 //MAIL AL USUARIO QUE SE REGISTRA
-                                $mail2->isSMTP();                                            //Send using SMTP
-                                $mail2->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                                $mail2->SMTPAuth   = true;                                   //Enable SMTP authentication
-                                $mail2->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
-                                $mail2->Password   = 'Mailerunaj21';                               //SMTP password
-                                $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                                $mail2->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                                $mail->isSMTP();                                            //Send using SMTP
+                                $mail->Host       = 'mail.unaj.edu.ar';                    //Set the SMTP server to send through
+                                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                                $mail->Username   = 'noresponder@unaj.edu.ar';                     //SMTP username
+                                $mail->Password   = 'qwew1232';                               //SMTP password
+                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                                $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
                                 //Recipients
-                                $mail2->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
+                                $mail->setFrom('noresponder@unaj.edu.ar', 'OvaUnaj');
                                 $mail2->addAddress($email);     //Add a recipient
 
                                 //Content
