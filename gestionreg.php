@@ -12,27 +12,36 @@ require 'vistas/mail/SMTP.php';
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ficha del OVA</title>
-
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style_nav.css" rel="stylesheet">
-	<link href="css/popup.css" rel="stylesheet">
-	<style>
-		.content {
-			margin-top: 80px;
-		}
-	</style>
-
+    <link rel="shortcut icon" href="#" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ABM-Banco OVA</title>
+    
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="estilos.css">
+    
+    <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
+    
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<?php include("nav.php");?>
-	</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="img/logo-transparente.png" height="40"></a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            &#9776;
+        </button>
+        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">¿Qué son los OVA?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctenos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 	<div class="container">
 		<div class="content">
 					
