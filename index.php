@@ -79,7 +79,7 @@ if (isset($_GET['sso'])) {
                                     <small><a href="registro.php">Registrarse</a></small>
                                 </div>
                                 <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Olvidé mi clave</a></small>
+                                    <small><a href="olvidemiclave.php">Olvidé mi clave</a></small>
                                 </div>
                             </form>
                         </li>
@@ -89,26 +89,6 @@ if (isset($_GET['sso'])) {
         </div>
     </div>
 </nav>
-
-<div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>¿Olvidó su clave?</h3>
-                <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <div class="modal-body">
-                <p>Ingrese su mail para pedir un recupero de clave</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                <button class="btn btn-primary">Guardar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 <br><br><br>
  
