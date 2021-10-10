@@ -24,41 +24,40 @@ if(isset($_POST['submit'])){
       //ENVIAR EL MAIL PARA INGRESAR NUEVAMENTE
       $mail2 = new PHPMailer(true);
 
-			try {
-			    //MAIL AL USUARIO QUE SE REGISTRA
-			    $mail2->isSMTP();                                            //Send using SMTP
-			    $mail2->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-			    $mail2->SMTPAuth   = true;                                   //Enable SMTP authentication
-			    $mail2->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
-			    $mail2->Password   = 'Mailerunaj21';                               //SMTP password
-			    $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-			    $mail2->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+	try {
+	    //MAIL AL USUARIO QUE SE REGISTRA
+	    $mail2->isSMTP();                                            //Send using SMTP
+	    $mail2->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+	    $mail2->SMTPAuth   = true;                                   //Enable SMTP authentication
+	    $mail2->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
+	    $mail2->Password   = 'Mailerunaj21';                               //SMTP password
+	    $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+	    $mail2->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-			    //Recipients
-			    $mail2->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
-			    $mail2->addAddress($email);     //Add a recipient
+	    //Recipients
+	    $mail2->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
+	    $mail2->addAddress($email);     //Add a recipient
 
-			    //Content
-			    $mail2->isHTML(true);                                  //Set email format to HTML
-			    $mail2->Subject = 'RECUPERO DE CLAVE OVA UNAJ';
-			    $mail2->Body    = 'HOLA '.$nombre.' '.$apellido.'! TE ENVIAMOS LOS DATOS PARA REESTABLECER TU CLAVE:<br>CLAVE: '.$clave.'<br> Ingresá a  '.$link.' para cambiar tu clave provisoria';
+	    //Content
+	    $mail2->isHTML(true);                                  //Set email format to HTML
+	    $mail2->Subject = 'RECUPERO DE CLAVE OVA UNAJ';
+	    $mail2->Body    = 'HOLA '.$nombre.' '.$apellido.'! TE ENVIAMOS LOS DATOS PARA REESTABLECER TU CLAVE:<br>CLAVE: '.$clave.'<br> Ingresá a  '.$link.' para cambiar tu clave provisoria';
 
-			    $mail2->send();
+	    $mail2->send();
 
 
 
-			} catch (Exception $e) {
-			    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-			}
+	} catch (Exception $e) {
+	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+	} //LLAVES DEL TRY
            
       echo'<script type="text/javascript">
       alert("Revisa tu correo para reestablacer la clave. No olvides mirar en tu bandeja de spam o correo no deseado!");
       window.location.href="index.php";
       </script>';
-    
-
-  }
-}
+   } //LLAVES IF PRIMER ACCESO
+  } // LLAVES DEL ELSE NUM ROWS
+} // LLAVES IF SUBMIT
 			
 ?>
 <!DOCTYPE html>
