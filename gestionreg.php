@@ -48,8 +48,8 @@ if(mysqli_num_rows($sql) == 0){
 
 			    //Content
 			    $mail2->isHTML(true);                                  //Set email format to HTML
-			    $mail2->Subject = 'ACTIVACIÓN DE USUARIO OVA UNAJ';
-			    $mail2->Body    = 'HOLA '.$nombre.' '.$apellido.'!. GRACIAS POR REGISTRARSE AL BANCO DE OVA UNAJ, YA PODÉS ACCEDER. TUS DATOS PARA ACCEDER SON: <br>USUARIO: '.$usuario.'<br>CLAVE: '.$pass.'<br> Ingresá a  '.$link.' para cambiar tu clave inicial';
+			    $mail2->Subject = 'CUENTA DE USUARIO OVA UNAJ';
+			    $mail2->Body    = 'HOLA '.$nombre.' '.$apellido.'!. GRACIAS POR REGISTRARSE AL BANCO DE OVA UNAJ, YA PODÉS INGRESAR. TUS DATOS PARA ACCEDER SON: <br>USUARIO: '.$usuario.'<br>CLAVE: '.$pass.'<br> Ingresá a  '.$link.' para cambiar tu clave inicial';
 
 			    $mail2->send();
 
