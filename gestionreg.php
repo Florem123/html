@@ -16,7 +16,7 @@ require 'vistas/mail/SMTP.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ABM-Banco OVA</title>
+    <title>Registro de Usuarios</title>
     
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -106,7 +106,7 @@ require 'vistas/mail/SMTP.php';
      }
 
 			?>
-
+					<br><br><br>
 					<p class="titulo2">Registro de:</p></br>
 
 					<p class="titulo"><?php echo $row['nombre']." ".$row['apellido']; ?></p>
