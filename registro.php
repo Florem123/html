@@ -82,6 +82,7 @@ require 'vistas/mail/SMTP.php';
 
                 $tipo='E';
                 $activo=0;
+                $primer=0;
 
                 $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 $clave=substr(str_shuffle($permitted_chars), 0, 10);
@@ -90,8 +91,8 @@ require 'vistas/mail/SMTP.php';
                 if(mysqli_num_rows($cek) == 0){
 
 
-                        $insert = mysqli_query($con, "INSERT INTO user(nombre, apellido, mail, usuario, docente, nodoc, institucion, coment, tipo, activo, clave) 
-                            VALUES('$nombre','$apellido', '$email', '$usuario', '$d', '$nod', '$institucion', '$coment', '$tipo', '$activo', '$clave')") or die(mysqli_error());
+                        $insert = mysqli_query($con, "INSERT INTO user(nombre, apellido, mail, usuario, docente, nodoc, institucion, coment, tipo, activo, clave,primeracceso) 
+                            VALUES('$nombre','$apellido', '$email', '$usuario', '$d', '$nod', '$institucion', '$coment', '$tipo', '$activo', '$clave', '$primer')") or die(mysqli_error());
                         
                         $id_user= mysqli_insert_id($con);
                     
