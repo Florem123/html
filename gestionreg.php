@@ -8,56 +8,15 @@ require 'vistas/mail/Exception.php';
 require 'vistas/mail/PHPMailer.php';
 require 'vistas/mail/SMTP.php';
 
-?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <link rel="shortcut icon" href="#" />
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Registro de Usuarios</title>
-    
-     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="vistas/css/style_nav.css">
+// escaping, additionally removing everything that could be (html/javascript-) code
+$nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
 
-    
-    <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
-    
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
-    <div class="container">
-        <a class="navbar-brand" href="#"><img src="img/logo-transparente.png" height="40"></a>
-        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-            &#9776;
-        </button>
-        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
-            <ul class="nav navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">¿Qué son los OVA?</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contáctenos</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-	<div class="container">
-		<div class="content">
-					
-			<?php
-
-			// escaping, additionally removing everything that could be (html/javascript-) code
-			$nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
-			
-			$sql = mysqli_query($con, "SELECT * FROM user WHERE id='$nik'");
-			if(mysqli_num_rows($sql) == 0){
-				header("Location: index.php");
-			}else{
-				$row = mysqli_fetch_assoc($sql);
-			}
+$sql = mysqli_query($con, "SELECT * FROM user WHERE id='$nik'");
+if(mysqli_num_rows($sql) == 0){
+	header("Location: index.php");
+}else{
+	$row = mysqli_fetch_assoc($sql);
+}
 			
 
 
@@ -100,12 +59,48 @@ require 'vistas/mail/SMTP.php';
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
         
-        echo  "<script type='text/javascript'>";
-        echo "window.close();";
-        echo "</script>";
+        header("Location: index.php");
      }
 
-			?>
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="#" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registro de Usuarios</title>
+    
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="vistas/css/style_nav.css">
+
+    
+    <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
+    
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="img/logo-transparente.png" height="40"></a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            &#9776;
+        </button>
+        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">¿Qué son los OVA?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctenos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+	<div class="container">
+		<div class="content">
+					
 			<form method="post">
 					<br><br><br>
 					<p class="titulo2">Registro de:</p></br>
