@@ -21,8 +21,8 @@ if(mysqli_num_rows($sql) == 0){
 
 
 
-	if(isset($_POST['add']) && $row['activo']==0){
-
+	if(isset($_POST['add'])){
+		if($row['activo']==0){
 				$activo=1;
 				$email= $row['mail'];
 				$pass= $row['clave'];
@@ -30,40 +30,40 @@ if(mysqli_num_rows($sql) == 0){
 				$link ='http://ovasunaj.informatica.unaj.edu.ar/primeracceso.php?nik='.$nik;
 				$u = mysqli_query($con, "UPDATE user SET activo='$activo' WHERE id='$nik'") or die(mysqli_error());
 
-        $mail2 = new PHPMailer(true);
+			$mail2 = new PHPMailer(true);
 
-        try {
-            //MAIL AL USUARIO QUE SE REGISTRA
-            $mail2->isSMTP();                                            //Send using SMTP
-            $mail2->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-            $mail2->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail2->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
-            $mail2->Password   = 'Mailerunaj21';                               //SMTP password
-            $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail2->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+			try {
+			    //MAIL AL USUARIO QUE SE REGISTRA
+			    $mail2->isSMTP();                                            //Send using SMTP
+			    $mail2->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+			    $mail2->SMTPAuth   = true;                                   //Enable SMTP authentication
+			    $mail2->Username   = 'mailerovaunaj@gmail.com';                     //SMTP username
+			    $mail2->Password   = 'Mailerunaj21';                               //SMTP password
+			    $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+			    $mail2->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-            //Recipients
-            $mail2->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
-            $mail2->addAddress($email);     //Add a recipient
+			    //Recipients
+			    $mail2->setFrom('mailerovaunaj@gmail.com', 'OvaUnaj');
+			    $mail2->addAddress($email);     //Add a recipient
 
-            //Content
-            $mail2->isHTML(true);                                  //Set email format to HTML
-            $mail2->Subject = 'ACTIVACIÓN DE USUARIO OVA UNAJ';
-            $mail2->Body    = 'HOLA '.$nombre.' '.$apellido.'!. GRACIAS POR REGISTRARSE AL BANCO DE OVA UNAJ, YA PODÉS ACCEDER. TUS DATOS PARA ACCEDER SON: <br>USUARIO: '.$usuario.'<br>CLAVE: '.$pass.'<br> Ingresá a  '.$link.' para cambiar tu clave inicial';
+			    //Content
+			    $mail2->isHTML(true);                                  //Set email format to HTML
+			    $mail2->Subject = 'ACTIVACIÓN DE USUARIO OVA UNAJ';
+			    $mail2->Body    = 'HOLA '.$nombre.' '.$apellido.'!. GRACIAS POR REGISTRARSE AL BANCO DE OVA UNAJ, YA PODÉS ACCEDER. TUS DATOS PARA ACCEDER SON: <br>USUARIO: '.$usuario.'<br>CLAVE: '.$pass.'<br> Ingresá a  '.$link.' para cambiar tu clave inicial';
 
-            $mail2->send();
+			    $mail2->send();
 
 
 
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }
+			} catch (Exception $e) {
+			    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+			}
         
-        header("Location: index.php");
-    }else{
+        		header("Location: index.php");
+    	}else{
 	 echo '<br><br><div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Este usuario ya fue aceptado! <a href="index.php">Volver</a></div>';
+		} 
 	} 
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
