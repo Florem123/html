@@ -61,7 +61,12 @@ if(isset($_POST['submit'])){
       alert("Revisa tu correo para reestablacer la clave. No olvides mirar en tu bandeja de spam o correo no deseado!");
       window.location.href="index.php";
       </script>';
-   } //LLAVES IF PRIMER ACCESO
+   } else{
+	echo'<script type="text/javascript">
+        alert("Revise su correo de bienvenida para activar su cuenta con su clave inicial");
+        window.location.href="index.php";
+        </script>';
+   }//LLAVES else PRIMER ACCESO
   } // LLAVES DEL ELSE NUM ROWS
 } // LLAVES IF SUBMIT
 			
