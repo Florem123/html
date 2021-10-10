@@ -106,6 +106,7 @@ require 'vistas/mail/SMTP.php';
      }
 
 			?>
+			<form method="post">
 					<br><br><br>
 					<p class="titulo2">Registro de:</p></br>
 
@@ -120,6 +121,7 @@ require 'vistas/mail/SMTP.php';
                   <a href="index.php" class="btn btn-sm btn-danger">Cancelar</a>
               </div>
           </div>
+		</form>	
 
 
 
