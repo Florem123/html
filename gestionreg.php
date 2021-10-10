@@ -51,7 +51,7 @@ require 'vistas/mail/SMTP.php';
 
 
 
-			if(isset($_POST['add'])){
+	if(isset($_POST['add'])){
 
 				$activo=1;
 				$email= $row['mail'];
@@ -62,7 +62,7 @@ require 'vistas/mail/SMTP.php';
 
         $mail2 = new PHPMailer(true);
 
-            
+        try {
             //MAIL AL USUARIO QUE SE REGISTRA
             $mail2->isSMTP();                                            //Send using SMTP
             $mail2->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
