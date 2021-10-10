@@ -80,7 +80,7 @@ require 'vistas/mail/SMTP.php';
                 $us = explode("@", $email);
                 $usuario=$us[0];
                 $usubus= $usuario.'%';
-                $cek1 = mysqli_query($con, "SELECT * FROM user WHERE usuario ILIKE '$usubus'");
+                $cek1 = mysqli_query($con, "SELECT * FROM user WHERE usuario LIKE '$usubus'");
                 if(mysqli_num_rows($cek1) != 0){
                     $u = mysqli_num_rows($cek1);
                     $usuario=$usuario.$u;                    
