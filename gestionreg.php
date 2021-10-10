@@ -27,7 +27,7 @@ if(mysqli_num_rows($sql) == 0){
 				$email= $row['mail'];
 				$pass= $row['clave'];
 				$usuario= $row['usuario'];
-				$link ='http://ovasunaj.informatica.unaj.edu.ar/primeracceso.php?nik='.$nik;
+				$link ='https://ova.informatica.unaj.edu.ar/primeracceso.php?nik='.$nik;
 				$u = mysqli_query($con, "UPDATE user SET activo='$activo' WHERE id='$nik'") or die(mysqli_error());
 
 			$mail2 = new PHPMailer(true);
