@@ -14,7 +14,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
+ <link rel="shortcut icon" href="../img/iconunaj.ico" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
