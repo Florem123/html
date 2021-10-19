@@ -22,10 +22,6 @@ if (isset($_GET['sso'])) {
 
 }
 
-//$_SESSION["s_usuario"]=$_SESSION['AuthNRequestID']['uid'][0];
-//var_dump($_SESSION['AuthNRequestID']['mail'][0]);
-//var_dump($_SESSION["s_usuario"]);
-
 ?>
 
 <!doctype html>
@@ -53,9 +49,7 @@ if (isset($_GET['sso'])) {
         </button>
         <div class="collapse navbar-collapse" id="exCollapsingNavbar">
             <ul class="nav navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">¿Qué son los OVA?</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contáctenos</a></li>
+                <li class="nav-item"><a href="whats.php" class="nav-link">¿Qué son los OVA?</a></li>
             </ul>
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                 <li class="dropdown order-1">
