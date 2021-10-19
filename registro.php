@@ -36,6 +36,7 @@ require 'vistas/mail/SMTP.php';
         </button>
         <div class="collapse navbar-collapse" id="exCollapsingNavbar">
             <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
                 <li class="nav-item"><a href="whats.php" class="nav-link">¿Qué son los OVA?</a></li>
             </ul>
         </div>
