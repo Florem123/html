@@ -145,7 +145,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 			</div>
 			
 			<a href="index.php" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Inicio</a>
-			<a href="busquedaareas.php" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Búsqueda por área del conocimiento</a>
+			<a href="busquedaareas2.php" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Búsqueda por área del conocimiento</a>
 			
 		</div>
 	</div>
