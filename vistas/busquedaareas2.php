@@ -72,10 +72,12 @@ if((time() - $_SESSION['s_time']) > 7200){
 					      <div class="card-body">';
 					      		$idcat=$row['id'];
 					      		$sql2 = mysqli_query($con, "SELECT DISTINCT s.id,s.descripcion
-								FROM relacion r
-								LEFT JOIN subcat s ON s.id=r.id_subcat
-								WHERE r.id_subcat IS NOT NULL
-								AND s.cat_padre='$idcat'");
+							FROM relacion r
+							LEFT JOIN subcat s ON s.id=r.id_subcat
+							LEFT JOIN objeto_ova o ON o.id_objeto=r.id_ova
+							WHERE r.id_subcat IS NOT NULL
+							AND o.ova_activo=1
+							AND s.cat_padre='$idcat'");
 
 					      		if(mysqli_num_rows($sql2) == 0){
 									echo '<a class="btn-danger" href="recucat.php?nik='.$row['id'].'">Todas</a>';
