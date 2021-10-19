@@ -71,7 +71,11 @@ if((time() - $_SESSION['s_time']) > 7200){
 					    <div id="'.$row['id'].'" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 					      <div class="card-body">';
 					      		$idcat=$row['id'];
-					      		$sql2 = mysqli_query($con, "SELECT * FROM subcat WHERE cat_padre='$idcat'");
+					      		$sql2 = mysqli_query($con, "SELECT DISTINCT s.id,s.descripcion
+								FROM relacion r
+								LEFT JOIN subcat s ON s.id=r.id_subcat
+								WHERE r.id_subcat IS NOT NULL
+								AND s.cat_padre='$idcat'");
 
 					      		if(mysqli_num_rows($sql2) == 0){
 									echo '<a class="btn-danger" href="recucat.php?nik='.$row['id'].'">Todas</a>';
