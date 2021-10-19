@@ -15,7 +15,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
+	<link rel="shortcut icon" href="img/iconunaj.ico" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -55,8 +55,8 @@ if((time() - $_SESSION['s_time']) > 7200){
 
 		<div class="table-responsive">
 
-	<a  href="buscador.php"> <button type="button" class="btn2 btn-primary">BUSCADOR DE OVAS</button> </a>
-	<a  href="about.php"> <button type="button" class="btn2 btn-primary">MARCO PEDAGÓGICO-DIDÁCTICO</button> </a>
+	<a  href="buscador.php"> <button type="button" class="btn2 btn-primary">Buscador de OVA</button> </a>
+	<a  href="about.php"> <button type="button" class="btn2 btn-primary">Marco pedagógico-didáctico</button> </a>
 		</div>
 		<br><br>
 
