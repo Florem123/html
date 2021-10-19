@@ -49,7 +49,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 
                 <div class="form-group">
                     <div class="col-sm-4">
-                        <img src="https://drive.google.com/uc?export=download&id=1D0ujgFBzCwvxjQ4RNJu718b1TUKO0-bB" height="200" width="200"/> <a  href="busquedarecu.php"> <button type="button" class="btn2 btn-primary">Tipo de recurso</button> </a>
+                        <img src="https://drive.google.com/uc?export=download&id=1D0ujgFBzCwvxjQ4RNJu718b1TUKO0-bB" height="100"/> <a  href="busquedarecu.php"> <button type="button" class="btn2 btn-primary">Tipo de recurso</button> </a>
                     </div>
                 
                 
@@ -59,7 +59,7 @@ if((time() - $_SESSION['s_time']) > 7200){
                 
                 
                     <div class="col-sm-4">
-                        <img src="https://drive.google.com/uc?export=download&id=1xSThDplIMA92FzhTpT5MmMcpDdvZpb5f" height="100" /> <a  href="busquedapal.php"> <button type="button" class="btn2 btn-primary">Palabras claves</button></a>
+                        <img src="https://drive.google.com/uc?export=download&id=1O94ZdmwLbGsD2w7AlQawJivQdIV67r29" height="100" /> <a  href="busquedapal.php"> <button type="button" class="btn2 btn-primary">Palabras claves</button></a>
                     </div>
                 </div>
            </div>
