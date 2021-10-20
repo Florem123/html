@@ -13,7 +13,7 @@ $pass = md5($password);
 $consulta = "SELECT mail,usuario,tipo,activo,primeracceso
 FROM user
 WHERE usuario='$usuario' 
-AND password='$pass'
+AND clave='$pass'
 AND activo=1 ";	
 $resultado = $conexion->prepare($consulta);
 $resultado->execute(); 
