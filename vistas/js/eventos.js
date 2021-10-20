@@ -87,6 +87,7 @@ $(document).ready(function(){
       var usu= $('#usu').val();
       var tipo= $('#tipo').val();
       var id_objeto= $('#id_objeto').val();
+      console.log(nom);
       console.log(usu);
       console.log(tipo);
       console.log(id_objeto);
