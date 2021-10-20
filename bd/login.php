@@ -16,12 +16,22 @@ $resultado->execute();
 
 
 if($resultado->rowCount() >= 1){ 
-    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);    
-    $_SESSION["s_usuario"] = $usuario;
-    $_SESSION["s_tipo"] = 'E';    
-    $_SESSION["s_idRol"] = $data[0]["idRol"];
-    $_SESSION["s_rol_descripcion"] = $data[0]["rol"];
-    $_SESSION['s_time'] = time();
+    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+    if($data["primeracceso"] == 1){
+        echo'<script type="text/javascript">
+            alert("Usted no ha accedido por primera vez a cambiar su clave inicial. Por favor revise su mail.");
+            window.location.href="../index.php";
+            </script>';      
+    }else{
+        $_SESSION["s_usuario"] = $usuario;
+        $_SESSION["s_tipo"] = 'E';
+        $_SESSION["s_mail"]=$data["mail"];
+        $_SESSION['s_time'] = time();
+        $tipo=$_SESSION["s_tipo"];
+        $est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo) 
+							VALUES('$usuario','$tipo')") or die(mysqli_error());
+        $_SESSION["s_idlog"] = mysqli_insert_id($est2);
+    }
 }else{
     $_SESSION["s_usuario"] = null;  
     $data=null;
