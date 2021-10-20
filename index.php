@@ -17,6 +17,11 @@ if (isset($_GET['sso'])) {
         $_SESSION["s_mail"]=$_SESSION['AuthNRequestID']['mail'][0];
         $_SESSION["s_tipo"]='I';
         $_SESSION['s_time'] = time();
+        $usuario=$_SESSION["s_usuario"];
+        $tipo=$_SESSION["s_tipo"];
+        $est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo) 
+	VALUES('$usuario','$tipo')") or die(mysqli_error());
+        $_SESSION["s_idlog"] = mysqli_insert_id($est2);
         header("Location: vistas/index.php");
          }
 
