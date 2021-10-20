@@ -6,7 +6,7 @@ require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';
 
-include("conexion.php");
+include("../conexion.php");
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom'] : '';
 $correo = (isset($_POST['mail'])) ? $_POST['mail'] : '';
