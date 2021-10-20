@@ -13,7 +13,6 @@ if ($_SESSION["s_tipo"]== 'I'){
         unset($_SESSION["s_tipo"]);
         unset($_SESSION["s_mail"]);
 	unset($_SESSION["s_time"]);
-	unset($_SESSION["s_idlog"]);
 	session_destroy();
 	header("Location: ../index.php");
 } elseif ($_SESSION["s_tipo"] == 'E'){
