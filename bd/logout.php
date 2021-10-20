@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("/vistas/conexion.php");
+include("vistas/conexion.php");
 $saml_lib_path = '/var/simplesamlphp/lib/_autoload.php';
 require_once $saml_lib_path;
 
