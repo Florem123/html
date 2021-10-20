@@ -30,7 +30,6 @@ if($resultado->rowCount() >= 1){
         $tipo=$_SESSION["s_tipo"];
         $est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo) 
 							VALUES('$usuario','$tipo')") or die(mysqli_error());
-        $_SESSION["s_idlog"] = mysqli_insert_id($est2);
     }
 }else{
     $_SESSION["s_usuario"] = null;  
