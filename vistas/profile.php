@@ -56,8 +56,8 @@ if((time() - $_SESSION['s_time']) > 7200){
 			
 			$est1=mysqli_query($con, "INSERT INTO estadi(id_ova, usuario, fecha) 
 							VALUES('$nik','$usu', '$fecha_actual')") or die(mysqli_error());
-			
-			$obs='Visita OVA: '.$nik;
+			$id_objeto= $row ['id_objeto'];
+			$obs='Visita OVA: '.$id_objeto;
         		$est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo,fecha_logueo,obs) 
 			VALUES('$usuario','$tipo','$fecha_actual','$obs')") or die(mysqli_error());
 
