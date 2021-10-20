@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("vistas/conexion.php");
 //PROBAND LOS CAMBIOS
 require_once '/var/simplesamlphp/lib/_autoload.php';
 
