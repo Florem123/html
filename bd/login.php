@@ -32,8 +32,9 @@ if($resultado->rowCount() >= 1){
         $_SESSION["s_mail"]=$data["mail"];
         $_SESSION['s_time'] = time();
         $tipo=$_SESSION["s_tipo"];
-        $est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo) 
-							VALUES('$usuario','$tipo')") or die(mysqli_error());
+        $consulta2 ="INSERT INTO logs(usuario,tipo) VALUES('$usuario','$tipo')";
+	$resultado2 = $conexion->prepare($consulta2);
+	$resultado2->execute(); 
     }
 }else{
     $_SESSION["s_usuario"] = null;  
