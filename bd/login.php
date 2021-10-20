@@ -34,7 +34,8 @@ if($resultado->rowCount() >= 1){
         $tipo=$_SESSION["s_tipo"];
 	date_default_timezone_set("America/Argentina/Buenos_Aires");
 	$fecha_actual=date("Y-m-d H:i:s");
-        $consulta2 ="INSERT INTO logs(usuario,tipo,fecha_logueo) VALUES('$usuario','$tipo','$fecha_actual')";
+	$obs='Inicio Sesión';
+        $consulta2 ="INSERT INTO logs(usuario,tipo,fecha_logueo,obs) VALUES('$usuario','$tipo','$fecha_actual','$obs')";
 	$resultado2 = $conexion->prepare($consulta2);
 	$resultado2->execute(); 
     }
