@@ -191,9 +191,9 @@ if((time() - $_SESSION['s_time']) > 7200){
     <label for="coment"><b>Comentario</b></label></br>
     <textarea  id="coment" rows="5" style="resize: none; width: 100%;"></textarea>
 	
-	<input type="text" name="usu" id="usu" value="<?php echo $usu; ?>">
-	<input type="text" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
-  	<input type="text" name="id_objeto" id="id_objeto" value="<?php echo $row['id_objeto']; ?>">
+	<input type="hidden" name="usu" id="usu" value="<?php echo $usu; ?>">
+	<input type="hidden" name="tipo" id="tipo" value="<?php echo $tipo; ?>">
+  	<input type="hidden" name="id_objeto" id="id_objeto" value="<?php echo $row['id_objeto']; ?>">
 
     <button type="button" class="btn" id="enviarop">Enviar</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Cerrar</button>
