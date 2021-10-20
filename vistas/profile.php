@@ -58,8 +58,9 @@ if((time() - $_SESSION['s_time']) > 7200){
 							VALUES('$nik','$usu', '$fecha_actual')") or die(mysqli_error());
 			$id_objeto= $row ['id_objeto'];
 			$obs='Visita OVA: '.$id_objeto;
+        		$tipo=$_SESSION["s_tipo"];
         		$est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo,fecha_logueo,obs) 
-			VALUES('$usuario','$tipo','$fecha_actual','$obs')") or die(mysqli_error());
+			VALUES('$usu','$tipo','$fecha_actual','$obs')") or die(mysqli_error());
 
 			?>
 
