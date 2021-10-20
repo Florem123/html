@@ -32,7 +32,9 @@ if($resultado->rowCount() >= 1){
         $_SESSION["s_mail"]=$data["mail"];
         $_SESSION['s_time'] = time();
         $tipo=$_SESSION["s_tipo"];
-        $consulta2 ="INSERT INTO logs(usuario,tipo) VALUES('$usuario','$tipo')";
+	date_default_timezone_set("America/Argentina/Buenos_Aires");
+	$fecha_actual=date("Y-m-d H:i:s");
+        $consulta2 ="INSERT INTO logs(usuario,tipo,fecha_logueo) VALUES('$usuario','$tipo','$fecha_actual')";
 	$resultado2 = $conexion->prepare($consulta2);
 	$resultado2->execute(); 
     }
