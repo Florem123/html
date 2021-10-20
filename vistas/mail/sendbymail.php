@@ -6,9 +6,21 @@ require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';
 
+include("conexion.php");
+
 $nom = (isset($_POST['nom'])) ? $_POST['nom'] : '';
 $correo = (isset($_POST['mail'])) ? $_POST['mail'] : '';
 $comentario = (isset($_POST['coment'])) ? $_POST['coment'] : '';
+$usu = (isset($_POST['usu'])) ? $_POST['usu'] : '';
+$tipo = (isset($_POST['tipo'])) ? $_POST['tipo'] : '';
+$id_objeto = (isset($_POST['id_objeto'])) ? $_POST['id_objeto'] : '';
+
+date_default_timezone_set("America/Argentina/Buenos_Aires");
+$fecha_actual=date("Y-m-d H:i:s");
+
+$obs='Comentario OVA: '.$id_objeto;
+$est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo,fecha_logueo,obs) 
+			VALUES('$usu','$tipo','$fecha_actual','$obs')") or die(mysqli_error());
 
 
 
