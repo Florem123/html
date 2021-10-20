@@ -24,7 +24,7 @@ if (isset($_GET['sso'])) {
 	    
         $est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo) 
 	VALUES('$usuario','$tipo')") or die(mysqli_error());
-        $_SESSION["s_idlog"] = mysqli_insert_id($est2);
+        //$_SESSION["s_idlog"] = mysqli_insert_id($est2);
         header("Location: vistas/index.php");
          }
 
