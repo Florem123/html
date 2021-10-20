@@ -84,12 +84,8 @@ $(document).ready(function(){
       var nom= $('#nombre').val();
       var mail= $('#email').val();
       var coment= $('#coment').val();
-      var usu = $('form input:hidden[name=usu]').val();
-      var tipo= $('#tipo').val();
-      var id_objeto= $('#id_objeto').val();
-      alert ("Hola Mundo")
       if (coment!='') {
-        $.post("mail/sendbymail.php", { nom: nom, mail: mail, coment: coment, usu: usu, tipo: tipo, id_objeto: id_objeto}, function(data) {
+        $.post("mail/sendbymail.php", { nom: nom, mail: mail, coment: coment}, function(data) {
               if(data == "null"){
                 alert ("Error al enviar comentario");                   
               }else{   
