@@ -22,7 +22,7 @@ if (isset($_GET['sso'])) {
         $tipo=$_SESSION["s_tipo"];
 	date_default_timezone_set("America/Argentina/Buenos_Aires");
 	$fecha_actual=date("Y-m-d H:i:s");
-	$obs='Inicio Sesión';
+	$obs='Ingreso';
         $est2=mysqli_query($con, "INSERT INTO logs(usuario,tipo,fecha_logueo,obs) 
 	VALUES('$usuario','$tipo','$fecha_actual','$obs')") or die(mysqli_error());
         header("Location: vistas/index.php");
