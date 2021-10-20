@@ -84,7 +84,7 @@ $(document).ready(function(){
       var nom= $('#nombre').val();
       var mail= $('#email').val();
       var coment= $('#coment').val();
-      var usu= $('#usu').val();
+      var usu = $('form input:hidden[name=usu]').val();
       var tipo= $('#tipo').val();
       var id_objeto= $('#id_objeto').val();
       alert ("Hola Mundo")
