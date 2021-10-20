@@ -9,7 +9,6 @@ if ($_SESSION["s_usuario"] === null){
 if((time() - $_SESSION['s_time']) > 7200){
 	header('location: ../bd/logout.php');
 }
-var_dump($_SESSION["s_idlog"]);
 
 ?>
 <!DOCTYPE html>
