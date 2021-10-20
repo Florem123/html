@@ -87,6 +87,9 @@ $(document).ready(function(){
       var usu= $('#usu').val();
       var tipo= $('#tipo').val();
       var id_objeto= $('#id_objeto').val();
+      console.log(usu);
+      console.log(tipo);
+      console.log(id_objeto);
       if (coment!='') {
         $.post("mail/sendbymail.php", { nom: nom, mail: mail, coment: coment, usu:usu, tipo: tipo, id_objeto: id_objeto}, function(data) {
               if(data == "null"){
