@@ -10,7 +10,11 @@ $password = (isset($_POST['password'])) ? $_POST['password'] : '';
 
 $pass = md5($password);
 
-$consulta = "SELECT usuarios.idRol AS idRol, roles.descripcion AS rol FROM usuarios JOIN roles ON usuarios.idRol = roles.id WHERE usuario='$usuario' AND password='$pass' ";	
+$consulta = "SELECT mail,usuario,tipo,activo,primeracceso
+FROM user
+WHERE usuario='$usuario' 
+AND password='$pass'
+AND activo=1 ";	
 $resultado = $conexion->prepare($consulta);
 $resultado->execute(); 
 
