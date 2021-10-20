@@ -11,9 +11,9 @@ include("../conexion.php");
 $nom = (isset($_POST['nom'])) ? $_POST['nom'] : '';
 $correo = (isset($_POST['mail'])) ? $_POST['mail'] : '';
 $comentario = (isset($_POST['coment'])) ? $_POST['coment'] : '';
-$usu = (isset($_POST['usu'])) ? $_POST['usu'] : '';
-$tipo = (isset($_POST['tipo'])) ? $_POST['tipo'] : '';
-$id_objeto = (isset($_POST['id_objeto'])) ? $_POST['id_objeto'] : '';
+$usu = $_POST['usu'];
+$tipo =$_POST['tipo'];
+$id_objeto = $_POST['id_objeto'];
 
 date_default_timezone_set("America/Argentina/Buenos_Aires");
 $fecha_actual=date("Y-m-d H:i:s");
