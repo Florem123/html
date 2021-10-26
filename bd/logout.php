@@ -3,7 +3,9 @@ session_start();
 $saml_lib_path = '/var/simplesamlphp/lib/_autoload.php';
 require_once $saml_lib_path;
 include_once 'conexion.php';
+$flag=true;
 
+if($flag==true){
 $usuario= $_SESSION["s_usuario"];
 $tipo=$_SESSION["s_tipo"];
 date_default_timezone_set("America/Argentina/Buenos_Aires");
@@ -14,6 +16,9 @@ $conexion = $objeto->Conectar();
 $consulta2 ="INSERT INTO logs(usuario,tipo,fecha_logueo,obs) VALUES('$usuario','$tipo','$fecha_actual','$obs')";
 $resultado2 = $conexion->prepare($consulta2);
 $resultado2->execute();
+$flag=false;
+}
+	
 
 if ($_SESSION["s_tipo"]== 'I'){
     	 //check for sso session and invalidate
