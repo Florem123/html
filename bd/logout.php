@@ -2,7 +2,7 @@
 session_start();
 $saml_lib_path = '/var/simplesamlphp/lib/_autoload.php';
 require_once $saml_lib_path;
-
+include_once 'conexion.php';
 
 $usuario= $_SESSION["s_usuario"];
 $tipo=$_SESSION["s_tipo"];
