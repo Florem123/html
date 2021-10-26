@@ -42,6 +42,12 @@ if ($_SESSION["s_tipo"]== 'I'){
         unset($_SESSION["s_rol_descripcion"]);
 	unset($_SESSION["s_time"]);
         session_destroy();
+	if($flag==true){
+		$consulta2 ="INSERT INTO logs(usuario,tipo,fecha_logueo,obs) VALUES('$usuario','$tipo','$fecha_actual','$obs')";
+		$resultado2 = $conexion->prepare($consulta2);
+		$resultado2->execute();
+		$flag=false;
+		}
         header("Location: ../index.php");
 }
 
