@@ -165,13 +165,13 @@ if((time() - $_SESSION['s_time']) > 7200){
 					$consulta = mysqli_query($con, "SELECT * FROM tipo_ova WHERE id='$tipo'");
 					$result = mysqli_fetch_assoc($consulta);
 					
-								if($result['identificador'] != 'IMG' or strpos($row['enlace'], 'http:') != true){
-									if(strpos($row['enlace'], 'http:') != true){
-										echo '<p><iframe src="'.$row['enlace'].'" height="400" width="600" name="demo" referrerpolicy="unsafe-url">
-										</iframe></p>';
-									}else{
+								if($result['identificador'] != 'IMG'){
+									if(strpos($row['enlace'], 'http:') !== false){
 										echo '<p><img src="'.$row['miniatura'].'" height="400" width="400" name="demo">
-										</p>';										
+										</p>';
+									}else{
+										echo '<p><iframe src="'.$row['enlace'].'" height="400" width="600" name="demo" referrerpolicy="unsafe-url">
+										</iframe></p>';										
 									}	
 								}else{
 									echo '<p><img src="'.$row['enlace'].'" height="400" width="600" name="demo">
