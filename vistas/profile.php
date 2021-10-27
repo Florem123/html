@@ -166,7 +166,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 					$result = mysqli_fetch_assoc($consulta);
 					
 								if($result['identificador'] != 'IMG'){
-									if(strpos($row['enlace'], 'http:') !== false){
+									if(strpos($row['enlace'], 'http:') !== false or strpos($row['enlace'], 'google') !== false){
 										echo '<p><a href="'.$row['enlace'].'" target="_blank" rel="noopener noreferrer">
 										<img src="'.$row['miniatura'].'" height="400" width="400" name="demo">
 										</a></p>';
