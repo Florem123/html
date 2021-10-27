@@ -167,8 +167,9 @@ if((time() - $_SESSION['s_time']) > 7200){
 					
 								if($result['identificador'] != 'IMG'){
 									if(strpos($row['enlace'], 'http:') !== false){
-										echo '<p><img src="'.$row['miniatura'].'" height="400" width="400" name="demo">
-										</p>';
+										echo '<p><a href="'.$row['enlace'].'" target="_blank" rel="noopener noreferrer">
+										<img src="'.$row['miniatura'].'" height="400" width="400" name="demo">
+										</a></p>';
 									}else{
 										echo '<p><iframe src="'.$row['enlace'].'" height="400" width="600" name="demo" referrerpolicy="unsafe-url">
 										</iframe></p>';										
@@ -180,7 +181,7 @@ if((time() - $_SESSION['s_time']) > 7200){
 
 					?> 
 
-					<pre class="titulo">Enlace: <a href="<?php echo $row['enlace']; ?>"> <?php echo $row['enlace']; ?></a></pre></br>
+					<pre class="titulo">Enlace: <a href="<?php echo $row['enlace']; ?>" target="_blank" rel="noopener noreferrer"> <?php echo $row['enlace']; ?></a></pre></br>
 
 	<button class="open-button" id="botonen" onclick="openForm()"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Consultas y sugerencias</button>
 
